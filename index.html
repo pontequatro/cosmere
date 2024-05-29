@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link href="https://allfont.net/allfont.css?fonts=ninja-naruto" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <link
+        href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.6qtY7eooQBTfiSVjtrLrGQHaEj%26pid%3DApi&f=1"
+        rel="icon" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="Images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="css/translate.css" rel="stylesheet" type="text/css" media="all" />
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <title>Ponte Quatro</title>
+</head>
+<style>
+.vid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:rgba(0, 0, 0 , 0.5);
+    color: white;
+    font-size: 30px;
+    position: relative;
+    overflow: hidden;
+    min-height: 50vh;
+    }
+    .videosrc{
+    position: absolute;
+    z-index: -1;    
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    }
+
+   </style>
+<body class="light-mode">
+
+    <a href="#" class="to-top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+    <figure class="sky"></figure>
+    <div class="loader ">
+
+        <header>
+
+            <nav class=" animate__animated animate__fadeInDown sticky navbar  navbar-expand-lg navbar-light" style="height: 60px; padding:5px 5px 5px 30px;">
+
+                <div class="search">
+                    <div class="icon"></div>
+                    <div class="input">
+                        <input type="text" placeholder="search" id="mysearch" oninput="filterCards()">
+                    </div>
+
+                    <span class="clear" onclick="clearSearch()"></span>
+                </div>
+                <button class="navbar-toggler" class="menu-btn" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active mx-4">
+                            <a class="nav-link link" href="./index.html" >Home</a>
+                        </li>
+                        <li class="nav-item mx-4">
+                            <a class="link nav-link " href="./Game.html" >Jogo</a>
+                        </li>
+                        <div class="dark_lang">
+                            <li>
+                                <div>
+                                    <button onclick="darkmode()" class="toggle-mode darkmodebutton" id="toggler">🌙
+                                        escuro</button>
+                                </div>
+                            </li>
+                            <li class="nav-item mx-4">
+                            <div id="google_translate_element"></div>
+                            <script>
+                                function googleTranslateElementInit() {
+                                new google.translate.TranslateElement({
+                                pageLanguage: 'en',
+                                autoDisplay: 'true',
+                                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                                }, 'google_translate_element');
+                                }
+                            </script>
+                            <script src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
+                            </li>
+                        </div>
+                    
+                    </ul>
+
+                </div>
+            </nav>
+
+        </header>
+
+
+        <main>
+            <div class="chardiv "> 
+            <h1 class="chars">PERSONAGENS</h1>
+            <div class="toggle-switch">
+                <span class="toggle-label hero">Personagens</span>
+                <label class="toggle-button" for="toggle-input">
+                    <input type="checkbox" class="toggle-input" id="toggle-input">
+                    <div class="toggle-slider" id="toggle-slider"></div>
+                </label>
+                <span class="toggle-label villian">Mundos</span>
+            </div>
+            </div>
+          
+            <div class="container " id="cont">
+                <div class="flip-card animate__animated animate__flipInX good ">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                                   <div class="card-content">
+                                <h2 class="card-title ">Kaladin</h2>
+                                </div>
+                            <img data-src="Images/kaladin.jpg" alt="Shinki" >
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">
+                                Kaladin , apelidado de Kal , conhecido como Kaladin Stormblessed , é um Windrunner dos Cavaleiros Radiantes de Alethkar . Apesar de ter sido treinado como cirurgião desde cedo pelo pai , sua profissão escolhida é a de soldado. Ele é famoso como capitão da guarda pessoal do Alto Príncipe Dalinar Kholin , uma unidade conhecida como Ponte Quatro , comandante do batalhão de homens da ponte e Alto Marechal da Ordem dos Correventos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            
+                               <div class="card-content">
+                            <h2 class="card-title ">Vin</h2>
+                            </div>
+                            <img data-src="Images/vin.jpg" alt="Hinata Hyuga">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">
+                                Vin é a principal protagonista da trilogia Mistborn. Ela foi recrutada para ajudar a derrubar o Senhor Soberano por Kelsier e desempenhou um papel fundamental na derrota do Senhor Soberano, no subsequente governo Skaa e na consolidação do Segundo Império Final.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+               <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            
+                               <div class="card-content">
+                            <h2 class="card-title ">Dalinar Kholin</h2>
+                            </div>
+                            <img data-src="Images/dalinar.jpg" alt="Himawari Uzumaki" height="330px"
+                                width="300px">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">
+                                Dalinar Kholin, também conhecido como Espinho Negro, é um membro Alethi da Ordem dos Bondsmiths, ligado ao Stormfather. Ele é o Rei de Urithiru e o líder de fato dos reformados Cavaleiros Radiantes. Ele é o irmão mais novo de Gavilar Kholin, e tio de Elhokar Kholin e da atual Rainha de Alethkar, Jasnah Kholin. Atualmente é casado com Navani Kholin, viúva de Gavilar. Tem dois filhos, Adolin e Renarin, de Evi, sua primeira esposa. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                 
+                <div class="flip-card animate__animated animate__flipInX good">
+
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Kelsier</h2>
+                            </div>
+                            <img data-src="Images/Kelsier.jpg"
+                                alt="Jiraiya" height="300px" width="300px" class="img_card">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Kelsier , famoso como o Sobrevivente de Hathsin , é um poderoso Nascido das Brumas e um dos personagens principais de Nascidos das Brumas: O Império Final . Ele odeia a injustiça e leva esse ódio ao extremo, o que originalmente resultou em ele ser incapaz de ver o bem em qualquer membro da nobreza.</p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="flip-card animate__animated animate__flipInX evil">
+
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Reino Cognitivo</h2>
+                            </div>
+                            <img data-src="Images/reino-cognitivo.jpg"
+                                alt="Orochimaru" height="300px" width="300px" class="img_card">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">O Reino Cognitivo, também conhecido como Shadesmar em Roshar, pode ser usado como meio de saltar pelo mundo e viajar. É o lugar das ideias e tem muito em comum com os Ideais Platônicos. De acordo com Brandon, as maneiras pelas quais as pessoas sabem como fazer o Worldhop agora estão todas relacionadas de alguma forma ao Reino Cognitivo. Embora não precise ser assim, é assim que todo mundo conhece. [10] Além disso, os mundos estão muito mais próximos uns dos outros no Reino Cognitivo do que no Físico. Quando lá, um Worldhopper está a uma curta distância de outros mundos (embora possa levar semanas/meses para viajar entre os mundos). Shallan , Jasnah , Adolin , Kaladin e Azure viajaram para o Reino Cognitivo
+                            </p>
+                        </div>
+                    </div>
+                </div>
+             
+                <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            
+                               <div class="card-content">
+                            <h2 class="card-title ">Shallan Davar</h2>
+                            </div>
+                            <img data-src="Images/shallan.jpg" alt="Naruto" height="260px" width="300px">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Shallan Davar, cujos alter-egos são Véu e Radiante, é uma Tecelã de Luz dos Cavaleiros Radiantes de Jah Keved. Conhecida por descobrir a lendária cidade de Urithiru e por sua habilidade de reproduzir cenas com precisão fotográfica, Shallan vem de uma nobre casa de Jah Keved. Aos dezessete anos, deixou sua vida protegida para se tornar aprendiz da princesa Jasnah Kholin.</p>
+                        </div>
+                    </div>
+                </div>
+             
+                <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Hoid</h2>
+                            </div>
+                            <img data-src="Images/hoid.jpg"
+                                of character] height="300px" width="300px" class="img_card">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Hoid, um saltador de mundo misterioso. Ele aparece como informador na trilogia Mistborn, contador de histórias em Warbreaker e contrabandista em Elantris. Em Roshar, Hoid é o humorista e artista do ex-rei Elhokar. Ele é uma figura recorrente no Cosmere, existindo antes da criação dos deuses dos vários mundos, e abandonou seu nome verdadeiro.</p>
+                        </div>
+                    </div>
+                </div>
+
+             <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            
+                               <div class="card-content">
+                            <h2 class="card-title ">Jasnah</h2>
+                            </div>
+                            <img data-src="Images/jasnah.jpg"
+                            of character] height="300px" width="300px" class="img_card">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Jasnah é a filha herege do falecido rei Gavilar e de sua então esposa Navani. Ela é a irmã mais velha do ex-rei Elhokar, cunhada de Aesudan Kholin, sobrinha de Dalinar e Evi Kholin e prima de Adolin e Renarin. Jasnah é uma Elsecaller e agora a Rainha de Alethkar.</p>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            
+                               <div class="card-content">
+                            <h2 class="card-title ">Tress</h2>
+                            </div>
+                            <img data-src="./Images/tress.jpg" alt="Kawaki" height="260px" width="300px">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Tress, uma garota de dezoito anos, é conhecida pelo nome devido ao seu cabelo rebelde. Nasceu no Mar Esmeralda e viveu lá até partir para resgatar Charlie da Feiticeira. Atenciosa e gentil, com uma tendência à fixação que resulta em uma grande coleção de xícaras e uma habilidade natural de brotação, Tress se preocupa profundamente com a tripulação do Crow's Song. Ela arrisca sua vida para mantê-los seguros, sendo amada por isso pela tripulação, apesar do desgosto de Crow. </p>
+                        </div>
+                    </div>
+                </div>     
+
+                <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Rocha</h2>
+                            </div>
+                            <img data-src="./Images/rocha.jpg" alt="Sasuke Uchiha" height="350px" width="250px">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Rocha, cujo nome verdadeiro é Numuhukumakiaki'aialunamor, é um membro da Ponte Quatro no universo de Stormlight Archive. Ele é um Horneater das Montanhas Horneater, conhecido por sua força, habilidades culinárias excepcionais e senso de humor. Rock evita a violência sempre que possível devido às suas crenças culturais. Ele se tornou um amigo leal e confiável para Kaladin e os outros membros da Ponte Quatro, contribuindo significativamente para a coesão e moral do grupo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Adolin</h2>
+                            </div>
+                            <img data-src="./Images/adolin.jpg" alt=Sarada height="300px" width="300px"
+                                class="img_card">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Adolin Kholin é um dos principais personagens da série Stormlight Archive. Ele é filho de Dalinar e Evi Kholin, sobrinho do falecido rei Gavilar, primo de Jasnah e irmão mais velho de Renarin. Adolin é um talentoso duelista e um guerreiro habilidoso, possuindo a Espada Juramentada conhecida como Maya. Além de suas habilidades marciais, ele é carismático e dedicado à sua família e amigos. Adolin também desempenha um papel crucial no fortalecimento das relações entre os diferentes reinos de Roshar.</p>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Tien</h2>
+                            </div>
+                            <img src="./Images/tien.jpg" alt="Sumire Kakei" height="393px" width="737px"
+                                class="img_card">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">
+                               Tien é o irmão mais novo de Kaladin e um personagem do universo de Stormlight Archive. Conhecido por seu espírito alegre e otimista, Tien tem um talento natural para escultura e carpintaria. Sua bondade e alegria de viver são uma fonte de conforto para Kaladin, especialmente durante os tempos difíceis. A morte de Tien durante a guerra é um evento traumático que profundamente afeta Kaladin, motivando muitas de suas ações subsequentes e sua determinação em proteger aqueles ao seu redor.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Siri</h2>
+                            </div>
+                            <img data-src="./Images/siri.jpg" alt="Sakumo Hatake" height="350px"
+                                width="250px">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Siri é um dos personagens principais do livro "Warbreaker" de Brandon Sanderson. Ela é a filha mais nova do rei Dedelin de Idris e a irmã mais nova de Vivenna. Siri é conhecida por seu espírito livre e comportamento rebelde, contrastando com a seriedade de sua irmã. Inicialmente despreocupada e sem responsabilidades reais, Siri é enviada a Hallandren para se casar com o Deus-Rei Susebron, uma decisão que muda drasticamente sua vida. Ao longo da história, Siri mostra grande coragem, adaptabilidade e inteligência, desenvolvendo-se de uma jovem despreocupada a uma mulher forte e determinada, capaz de influenciar eventos significativos no reino.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Vivenna</h2>
+                            </div>
+                            <img data-src="./Images/vivenna.jpg" alt="Suigetsu" height="300px" width="300px"
+                                class="img_card">
+
+                        </div>
+                        <div class="flip-card-back">
+
+                            <p class="card-text">
+                                Siri é um dos personagens principais do livro "Warbreaker" de Brandon Sanderson. Ela é a filha mais nova do rei Dedelin de Idris e a irmã mais nova de Vivenna. Siri é conhecida por seu espírito livre e comportamento rebelde, contrastando com a seriedade de sua irmã. Inicialmente despreocupada e sem responsabilidades reais, Siri é enviada a Hallandren para se casar com o Deus-Rei Susebron, uma decisão que muda drasticamente sua vida. Ao longo da história, Siri mostra grande coragem, adaptabilidade e inteligência, desenvolvendo-se de uma jovem despreocupada a uma mulher forte e determinada, capaz de influenciar eventos significativos no reino.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card animate__animated animate__flipInX evil">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Reino Físico</h2>
+                            </div>
+                            <img data-src="./Images/cosmere.jpg" alt="Black Zetsu" height="300px" width="300px">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">No Reino Físico, o Cosmere é um aglomerado estelar que contém aproximadamente 50 a 100 estrelas. Este reino é composto de partículas fundamentais chamadas axi, seguindo as leis comuns da física, exceto quando os outros Reinos estão envolvidos. Atualmente, existem dezesseis sistemas planetários conhecidos no Cosmere, com um total de dezenove planetas notáveis. Além disso, o Cosmere abriga outros objetos celestes, como planetas anões, gigantes gasosos e constelações. Pelo menos uma pessoa tentou sair dos limites físicos do Cosmere, mas os resultados dessa tentativa são desconhecidos.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="flip-card animate__animated animate__flipInX evil">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Reino Espiritual</h2>
+                            </div>
+                            <img data-src="./Images/reino-espiritual.jpg" alt="Black Zetsu" height="300px" width="300px">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">O Reino Espiritual é descrito como o reino da "alma" no Cosmere. É um dos três reinos principais, juntamente com o Reino Físico e o Reino Cognitivo. Pouco se sabe sobre este reino, mas acredita-se que seja o local da vida após a morte dos residentes do Cosmere. Os Shardholders, ou detentores de Shards, podem não ter acesso total ao Reino Espiritual.
+
+                                Neste reino, cada pessoa possui uma rede de linhas que compõe sua teia espiritual. A forma específica desta teia espiritual é afetada por duas coisas diferentes: a) o sDNA do indivíduo, que determina o layout da teia espiritual, e b) trauma externo que pode "quebrar" a própria teia espiritual, como no caso do testemunho de Kaladin sobre a morte de Tien.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="flip-card animate__animated animate__flipInX evil">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Ashyn</h2>
+                            </div>
+                            <img data-src="./Images/mapa.jpg" alt="Black Zetsu" height="300px" width="300px">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Ashyn é um mundo no sistema Rosharan que é o primeiro planeta do sol de Roshar. Ele é conhecido como um mundo em chamas, tendo sofrido um cataclismo há muito tempo, supostamente devido ao Surgebinding. As pessoas que vivem em Ashyn habitam em bolsões muito pequenos de capacidade de sobrevivência, incluindo as famosas cidades flutuantes, enquanto várias outras fugiram para o planeta Roshar. Acredita-se que os Salões Tranquilinos do Vorinismo existam em Ashyn.
+
+                                A magia de Ashyn é baseada em doenças. À medida que as bactérias e vírus procuram manter seus hospedeiros vivos, eles conferem habilidades sobrenaturais a eles, que variam dependendo da doença.</p>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="flip-card animate__animated animate__flipInX evil">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                   <div class="card-content">
+                                <h2 class="card-title">Braize</h2>
+                                </div>
+                                <img data-src="./Images/mapa.jpg" alt="Black Zetsu" height="300px" width="300px">
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="card-text">Mais distante dos três do sistema Rosharan, Braize é um planeta frio e inóspito para os humanos. No entanto, é o lar de um ecossistema de Splinters autoconscientes, conhecidos localmente como spren. Khriss acredita que alguns desses spren podem ser na verdade Sombras Cognitivas, mas a pesquisa sobre Braize é difícil e perigosa, então ela prefere não teorizar por enquanto.
+
+                                    Braize é conhecido como o planeta onde os cantores da alvorada vingativos residiam entre as desolações, juntamente com os arautos que os mantinham contidos enquanto os espíritos os torturavam. Além disso, é revelado que Braize é uma condenação da religião Vorin.</p>
+    
+                            </div>
+                        </div>
+                    </div>
+
+                                        <div class="flip-card animate__animated animate__flipInX evil">
+                                            <div class="flip-card-inner">
+                                                <div class="flip-card-front">
+                                                       <div class="card-content">
+                                                    <h2 class="card-title">Nalthis</h2>
+                                                    </div>
+                                                    <img data-src="./Images/mapa.jpg" alt="Black Zetsu" height="300px" width="300px">
+                                                </div>
+                                                <div class="flip-card-back">
+                                                    <p class="card-text">Pouco se sabe sobre a geografia de Nalthis, embora haja um mar interior valioso para o comércio, com pelo menos um terço da costa sendo propriedade do reino mais poderoso de Hallandren.
+
+                                                        Hallandren é único em Nalthis por ser o único lugar conhecido onde as Tears of Edgli crescem, além de ter um clima de selva.
+                                                        
+                                                        O reino de Idris está localizado ao norte de Hallandren e controla as passagens pelas montanhas, que são valiosas para o comércio. Pode-se inferir que algumas nações bem povoadas estão localizadas além dessas montanhas e fora do alcance do mar interior. Além disso, dentro de Idris existem algumas minas de cobre.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+        <div class="flip-card animate__animated animate__flipInX evil">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                       <div class="card-content">
+                    <h2 class="card-title">Roshar</h2>
+                    </div>
+                    <img data-src="./Images/mapa.jpg"alt="Black Zetsu" height="300px" width="300px">
+                </div>
+                <div class="flip-card-back">
+                    <p class="card-text">Roshar é o nome do mundo, do sistema e do principal continente onde se passa a série de fantasia épica, The Stormlight Archive.
+
+                        É um mundo bastante grande pelos padrões do Cosmere, com uma circunferência de cerca de 22.110 milhas, menor que a da Terra, mas com uma grande variação, especialmente de leste a oeste.
+                        
+                        De acordo com Brandon Sanderson, há algo do outro lado deste mundo, mas na maior parte é apenas um oceano vazio.
+                        
+                        Três Shards influenciam Roshar: Cultivo, Honra e Ódio. No entanto, Roshar foi habitado antes da chegada de Honra e Cultivo, portanto, antes da Quebra de Adonalsium.</p>
+                </div>
+            </div>
+        </div>
+
+               <div class="flip-card animate__animated animate__flipInX evil">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                           <div class="card-content">
+                        <h2 class="card-title">Yolen</h2>
+                        </div>
+                        <img data-src="./Images/mapa.jpg" alt="Black Zetsu" height="300px" width="300px">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="card-text">Em Yolen, existem três raças: humanos, Sho Del e dragões.
+
+                            Antes do Fraturamento, a viagem entre mundos de Yolen para outros lugares como Roshar era possível, mas era muito mais difícil de realizar e não tão frequente como nos dias de hoje.
+                            
+                            Yolen é o local de origem de Hoid e onde ocorreu o Fraturamento.
+                            
+                            Curiosamente, em Yolen existem duas ecologias concorrentes: uma é o ecossistema familiar e a outra é uma ecologia invasiva chamada fain. Os Sho Del desempenham um papel no ecossistema fain, semelhante ao nicho que os humanos ocupam na Terra.
+                            
+                            Não há um Shard residindo em Yolen.
+                            
+                            Termos mitológicos originários de Yolen provavelmente são transferidos entre mundos, semelhante ao modo como termos do inglês antigo são preservados na cultura humana.</p>
+    
+                    </div>
+                </div>
+            </div>
+
+              <div class="flip-card animate__animated animate__flipInX evil">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                           <div class="card-content">
+                        <h2 class="card-title">Lumar</h2>
+                        </div>
+                        <img data-src="./Images/mapa.jpg" alt="Black Zetsu" height="300px" width="300px">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="card-text">Lumar é um mundo distinto daqueles que os leitores conhecem, onde os éteres definem a vida, como observado no pós-escrito de "Tress of the Emerald Sea". É considerado uma espécie de planeta "atrasado".
+
+                            Uma característica notável de Lumar é que suas doze luas abrigam uma variedade única dos éteres mencionados.</p>
+                    </div>
+                </div>
+            </div>
+
+              <div class="flip-card animate__animated animate__flipInX evil">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                           <div class="card-content">
+                        <h2 class="card-title">Scadrial</h2>
+                        </div>
+                        <img data-src="./Images/mapa.jpg" alt="Black Zetsu" height="300px" width="300px">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="card-text">Scadrial é o planeta onde ocorre a trilogia Mistborn. Governado por dois deuses, Preservação e Ruína, conhecidos como 'Fragmentos de Adonalsium', Scadrial é habitado por humanos, que foram criados pelo poder da Preservação e da Ruína trabalhando em conjunto. Além dos humanos, o planeta é habitado por outras raças como kandra, koloss e Inquisidores de Aço, que foram criados artificialmente através da Hemalurgia. Embora Scadrial se assemelhe muito à Terra, suas culturas são únicas e distintas.</p>
+    
+                    </div>
+                </div>
+            </div>
+
+                <div class="flip-card animate__animated animate__flipInX good">
+
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Susebron</h2>
+                            </div>
+                            <img data-src="./Images/susebron.jpg" alt="Could not load image" height="300px"
+                                width="300px">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Susebron é o Deus-Rei de Hallandren em "Warbreaker" de Brandon Sanderson. Ele é uma figura divina e governante supremo, conhecido por seu poder absoluto e aparente mutismo. Apesar de sua aparência imponente, Susebron é gentil, inteligente e curioso. Ele desenvolve uma profunda relação com Siri, sua esposa, que o ajuda a descobrir verdades ocultas sobre seu reino e seu próprio poder.</p>
+                        </div>
+                    </div>
+                </div>
+         
+                <div class="flip-card animate__animated animate__flipInX good">
+
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Meridas Amaram</h2>
+                            </div>
+
+                            <img data-src="./Images/amaram.jpg"
+                                alt="Black Zetsu" height="250px" width="350px">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Meridas Amaram é um personagem importante no universo de Stormlight Archive de Brandon Sanderson. Ele é um membro da alta nobreza de Alethkar e um ex-companheiro de Kaladin na milícia de Brightlord Amaram. Meridas é retratado como um homem ambicioso e determinado, disposto a fazer qualquer coisa para alcançar seus objetivos, mesmo que isso signifique trair aqueles que confiaram nele. Sua relação com Kaladin é complicada, marcada por traição e ressentimento. A história de Meridas Amaram é uma parte significativa das tramas políticas e sociais em Stormlight Archive.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card animate__animated animate__flipInX good">
+
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Padrao</h2>
+                            </div>
+                            <img data-src="./Images/padrao.jpg" alt="Could not load image" height="300px"
+                                width="300px">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">"Padrão" é o nome dado ao espreno que se manifesta como um tipo de entidade cognitiva. Ele é o companheiro espiritual de Shallan Davar, ajudando-a a manifestar seus poderes como uma Tecelã de Luz. Padrão é conhecido por sua natureza curiosa, perspicaz e muitas vezes sarcástica. Ele desempenha um papel importante na jornada de Shallan, oferecendo conselhos, conhecimento e apoio emocional durante momentos de dificuldade.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Mraize</h2>
+                            </div>
+                            <img data-src="./Images/mraize.jpg" alt="Anko Mitarashi" height="300px" width="300px"
+                                class="img_card">
+
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Mraize é um membro dos Fantasmas, uma organização secreta de assassinos e espiões. Mraize é habilidoso, astuto e altamente manipulador, e suas verdadeiras intenções e lealdades são frequentemente ambíguas. Ele desempenha um papel significativo nos bastidores da política e intriga em Roshar, frequentemente envolvendo-se em jogos de poder e conspirações complicadas. Mraize é conhecido por sua calma implacável e sua habilidade em manter segredos, tornando-o um adversário formidável para aqueles que se opõem a ele.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Elend venture</h2>
+                            </div>
+                            <img data-src="./Images/elend.jpg" alt="Hayate Gekko" height="300px" width="300px"
+                                class="img_card">
+
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Elend Venture é um personagem que aparece na primeira trilogia Mistborn de Brandon Sanderson . Nascido nobre na House Venture por Straff Venture , Elend é considerado uma socialite inepta em funções nobres, pois exibe o hábito de ler durante os bailes para chatear seu pai e uma fixação incomum nas pessoas da classe baixa do Império Final conhecido como skaa . Ele se considera um estudioso experiente.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Lopen</h2>
+                            </div>
+                            <img data-src="./Images/lopen.jpg" alt="Karin" height="300px" width="300px"
+                                class="img_card">
+
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Lopen é um membro da ponte quatro incapaz de carregar pontes, ele se torna útil carregando odres de água para eles nas passagens da ponte e auxiliando na cirurgia e nos primeiros socorros pós-batalha entregues por Kaladin .  Ele aparentemente tem muitos primos que podem ser chamados para fazer favores.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card animate__animated animate__flipInX good">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <div class="card-content">
+                            <h2 class="card-title">Syl</h2>
+                            </div>
+                            <img data-src="./Images/syl.jpg" alt="Princess Kasumi" height="250px"
+                                width="250px">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-text">Sylphrena, ou Syl, é um espreno, uma forma de manifestação de investidura no mundo de Roshar. Inicialmente, Syl aparece como uma pequena figura parecida com uma borboleta, mas ela se transforma em uma lâmina e, eventualmente, em uma mulher de ar. Syl se liga ao protagonista Kaladin como sua Lâmina Radiante, tornando-se sua companheira e conselheira espiritual. Ela é conhecida por sua curiosidade, entusiasmo e lealdade a Kaladin, desempenhando um papel significativo em sua jornada pessoal e no cumprimento de seu destino como Cavaleiro Radiante.</p>
+                        </div>
+                    </div>
+                </div>
+
+        </main>
+      
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+
+            </script>
+
+        <script src="js/searchbar.js"></script>
+        <script src="js/scrollEffect.js"></script>
+        <script src="js/lazyload.js"></script>
+
+        <script src="js/scrolltotop.js"></script>
+
+        <script src="js/switch-toggle.js"></script>
+
+        <script>
+
+            /* ------- Scroll To Top Button -------*/
+
+            const toTop = document.querySelector(".to-top");
+            window.addEventListener("scroll", () => {
+
+                if (window.pageYOffset > 400) {
+                    toTop.classList.add("active");
+                } else {
+                    toTop.classList.remove("active");
+                }
+
+            });
+
+        </script>
+
+
+        <script>
+            function darkmode() {
+                // console.log("hello");
+            
+                var element2 = document.querySelector("body");
+                const body = document.body;
+                body.classList.toggle("light-mode");
+                 body.classList.toggle("dark-mode");
+         
+                if (element2.classList.contains("light-mode")) {
+             
+                    document.querySelector("#toggler").innerHTML = "🌞 Light"
+                }
+                else {
+       
+                    document.querySelector("#toggler").innerHTML = "🌙 Dark";
+                }
+            }
+        </script>
+
+        <script>
+             function filterCards() {
+    var input, filter, cards, card, title, i, txtValue;
+    input = document.getElementById('mysearch');
+    filter = input.value.toUpperCase();
+    cards = document.getElementsByClassName('flip-card');
+
+    for (i = 0; i < cards.length; i++) {
+      card = cards[i];
+      title = card.querySelector('.card-title');
+      txtValue = title.textContent || title.innerText;
+
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    }
+  }
+  function clearSearch() {
+    document.getElementById('mysearch').value = '';
+    filterCards(); // Clearing the search should show all cards
+  }
+        </script>
+</body>
+
+</html>
